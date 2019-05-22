@@ -9,20 +9,27 @@
 def selects_the_titles_of_all_projects_and_their_pledge_amounts_alphabetized_by_name
 "SELECT projects.title FROM projects
 INNER JOIN pledges
-ON pledges.project_id = projects.id
+ON pledges.project_id == projects.id
 ORDER BY projects.title ASC;"
 end
 
 def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_name
-""
+"SELECT users.name FROM users
+INNER JOIN pledges
+ON pledges.user_id == users.id
+ORDER BY users.name ASC"
 end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
-"Write your SQL query Here"
+"SELECT users.names FROM users
+INNER JOIN pledges
+ON pledges.amount >= users.funding_goal"
 end
 
 def selects_user_names_and_amounts_of_all_pledges_grouped_by_name_then_orders_them_by_the_amount_and_users_name
-"Write your SQL query Here"
+"SELECT users.names FROM users
+INNER JOIN pledges
+ON users.funding_goal "
 end
 
 def selects_the_category_names_and_pledge_amounts_of_all_pledges_in_the_music_category
